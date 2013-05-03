@@ -1,2 +1,41 @@
 // This File is imported last, and will override other styles in the cascade
 // Add styles here to make changes without digging in too much
+
+html {
+    background: #fff;
+}
+
+body {
+    > header {
+        background: #fff;
+
+
+        h1 a, h1 a:visited {
+            color: #222;
+        }
+
+        h2 {
+            color: #f2f2f2;
+        }
+    }
+
+    > nav {
+        background: #fff;
+        border-top: 1px solid #bfbfbf;
+        border-bottom: 1px solid #bfbfbf;
+
+        li+li {
+            border-left: 1px solid #bfbfbf;
+        }
+    } 
+
+    > footer {
+        background: none;
+        border-bottom: 1px solid #bfbfbf;
+    }
+
+}
+
+
+
+
