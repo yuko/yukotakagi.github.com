@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Yuko Tåkagi]]></title>
+  <link href="http://yukotakagi.github.io/atom.xml" rel="self"/>
+  <link href="http://yukotakagi.github.io/"/>
+  <updated>2013-05-03T22:16:21-07:00</updated>
+  <id>http://yukotakagi.github.io/</id>
+  <author>
+    <name><![CDATA[Yuko Takagi]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[So Octopress,]]></title>
+    <link href="http://yukotakagi.github.io/blog/2013/05/02/test-test-test/"/>
+    <updated>2013-05-02T21:47:00-07:00</updated>
+    <id>http://yukotakagi.github.io/blog/2013/05/02/test-test-test</id>
+    <content type="html"><![CDATA[<p>I&#8217;ve decided to give it a try.</p>
+]]></content>
+  </entry>
+  
+</feed>

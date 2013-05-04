@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
+    <url>
+        <loc>http://yukotakagi.github.io/blog/2013/05/02/test-test-test/</loc>
+        <lastmod>2013-05-02T22:08:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://yukotakagi.github.io/about/</loc>
+        <lastmod>2013-05-02T22:08:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://yukotakagi.github.io/blog/archives/</loc>
+        <lastmod>2013-05-02T22:08:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://yukotakagi.github.io/</loc>
+        <lastmod>2013-05-02T22:08:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://yukotakagi.github.io/robots.txt</loc>
+        <lastmod>2013-05-02T16:40:16-07:00</lastmod>
+    </url>
+</urlset>
