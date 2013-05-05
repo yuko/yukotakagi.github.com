@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: octopress | Yuko Takagi]]></title>
+  <link href="http://yukotakagi.github.io/blog/categories/octopress/atom.xml" rel="self"/>
+  <link href="http://yukotakagi.github.io/"/>
+  <updated>2013-05-04T20:12:51-07:00</updated>
+  <id>http://yukotakagi.github.io/</id>
+  <author>
+    <name><![CDATA[Yuko Takagi]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[installing octopress for github user page]]></title>
+    <link href="http://yukotakagi.github.io/blog/2013/05/04/installing-octopress-for-github-user-page/"/>
+    <updated>2013-05-04T18:32:00-07:00</updated>
+    <id>http://yukotakagi.github.io/blog/2013/05/04/installing-octopress-for-github-user-page</id>
+    <content type="html"><![CDATA[<p>Here's the list of problems I ran into while setting up octopress on my github user page, and how I fixed them. Silly, but hey! Someone else might have encountered the same issues, so why not share them?</p>
+
+<h2>Issue: ruby is not up-to-date.</h2>
+
+<ul>
+<li>Fix: Get the latest that's compatible with octopress via rbenv. Install rbenv via Homebrew.
+<code>
+brew update
+brew install rbenv
+rbenv install 1.9.3-p0
+</code></li>
+</ul>
+
+
+<h2>Issue: rbenv says there's no such command 'install'</h2>
+
+<p><code>
+rbenv install 1.9.3-p0
+rbenv: no such command `install'
+</code>
+- Cause: You need ruby-build in order to run "rbenv install" command.
+- Fix: Run "brew ruby-build", then "rbenv install 1.9.3-p0". See <a href="https://github.com/sstephenson/ruby-build#readme">here</a> for instructions. Then run
+<code>
+git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+</code>
+- Now what?: Now that ruby-build is installed, back to setting ruby version.</p>
+
+<h2>Issue: "rbenv install 1.9.3-p0" spits error "configure: error: C compiler cannot create executables"</h2>
+
+<p>```
+$ rbenv install 1.9.3-p0
+Downloading yaml-0.1.4.tar.gz...
+-> http://dqw8nmjcqpjn7.cloudfront.net/36c852831d02cf90508c29852361d01b
+Installing yaml-0.1.4...</p>
+
+<p>BUILD FAILED</p>
+
+<p>Inspect or clean up the working tree at /var/folders/m4/xdbt7xw53pj3wldwfrxj5fm80000gn/T/ruby-build.20130501225910.3936
+Results logged to /var/folders/m4/xdbt7xw53pj3wldwfrxj5fm80000gn/T/ruby-build.20130501225910.3936.log</p>
+
+<p>Last 10 log lines:
+checking for gawk... no
+checking for mawk... no
+checking for nawk... no
+checking for awk... awk
+checking whether make sets $(MAKE)... no
+checking for gcc... /usr/local/bin/gcc-4.2
+checking whether the C compiler works... no
+configure: error: in <code>/var/folders/m4/xdbt7xw53pj3wldwfrxj5fm80000gn/T/ruby-build.20130501225910.3936/yaml-0.1.4':
+configure: error: C compiler cannot create executables
+See</code>config.log' for more details
+<code>
+- Cause: I didn't have xcode installed on this machine. Duh!!
+- Fix: Install xcode.
+- Now what?: Run "rbenv install 1.9.3-p0" again, and make sure you get no errors. Then run
+</code>
+rbenv rehash
+ruby --version
+```</p>
+
+<h2>Issue: "ruby --version" still isn't updated</h2>
+
+<p><code>
+$ ruby --version
+ruby 1.8.7 (2012-02-08 patchlevel 358) [universal-darwin11.0]
+</code>
+- Cause: It's using the system default version of ruby (which is 1.8.7).
+<code>
+$ rbenv global
+system
+</code>
+- Fix: Set the system default as 1.9.3-p0. Now do "rbenv global" and see what it's set to.
+<code>
+$ rbenv global 1.9.3-p0
+$ rbenv global
+1.9.3-p0
+</code></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[So Octopress,]]></title>
+    <link href="http://yukotakagi.github.io/blog/2013/05/02/test-test-test/"/>
+    <updated>2013-05-02T21:47:00-07:00</updated>
+    <id>http://yukotakagi.github.io/blog/2013/05/02/test-test-test</id>
+    <content type="html"><![CDATA[<p>I've decided to give it a try, as my github user page has been blank for a while and there's no reason not to play around with it.</p>
+]]></content>
+  </entry>
+  
+</feed>

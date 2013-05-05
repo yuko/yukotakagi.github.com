@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Yuko Tåkagi]]></title>
+  <title><![CDATA[Yuko Takagi]]></title>
   <link href="http://yukotakagi.github.io/atom.xml" rel="self"/>
   <link href="http://yukotakagi.github.io/"/>
-  <updated>2013-05-04T17:28:08-07:00</updated>
+  <updated>2013-05-04T20:12:51-07:00</updated>
   <id>http://yukotakagi.github.io/</id>
   <author>
     <name><![CDATA[Yuko Takagi]]></name>
@@ -14,11 +14,160 @@
 
   
   <entry>
+    <title type="html"><![CDATA[installing octopress for github user page]]></title>
+    <link href="http://yukotakagi.github.io/blog/2013/05/04/installing-octopress-for-github-user-page/"/>
+    <updated>2013-05-04T18:32:00-07:00</updated>
+    <id>http://yukotakagi.github.io/blog/2013/05/04/installing-octopress-for-github-user-page</id>
+    <content type="html"><![CDATA[<p>Here&#8217;s the list of problems I ran into while setting up octopress on my github user page, and how I fixed them. Silly, but hey! Someone else might have encountered the same issues, so why not share them?</p>
+
+<h2>Issue: ruby is not up-to-date.</h2>
+
+<ul>
+<li>Fix: Get the latest that&#8217;s compatible with octopress via rbenv. Install rbenv via Homebrew.</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>brew update
+</span><span class='line'>brew install rbenv
+</span><span class='line'>rbenv install 1.9.3-p0 </span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Issue: rbenv says there&#8217;s no such command &#8216;install&#8217;</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rbenv install 1.9.3-p0
+</span><span class='line'>rbenv: no such command `install'</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Cause: You need ruby-build in order to run &#8220;rbenv install&#8221; command.</li>
+<li>Fix: Run &#8220;brew ruby-build&#8221;, then &#8220;rbenv install 1.9.3-p0&#8221;. See <a href="https://github.com/sstephenson/ruby-build#readme">here</a> for instructions. Then run</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Now what?: Now that ruby-build is installed, back to setting ruby version.</li>
+</ul>
+
+
+<h2>Issue: &#8220;rbenv install 1.9.3-p0&#8221; spits error &#8220;configure: error: C compiler cannot create executables&#8221;</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ rbenv install 1.9.3-p0
+</span><span class='line'>Downloading yaml-0.1.4.tar.gz...
+</span><span class='line'>-&gt; http://dqw8nmjcqpjn7.cloudfront.net/36c852831d02cf90508c29852361d01b
+</span><span class='line'>Installing yaml-0.1.4...
+</span><span class='line'>
+</span><span class='line'>BUILD FAILED
+</span><span class='line'>
+</span><span class='line'>Inspect or clean up the working tree at /var/folders/m4/xdbt7xw53pj3wldwfrxj5fm80000gn/T/ruby-build.20130501225910.3936
+</span><span class='line'>Results logged to /var/folders/m4/xdbt7xw53pj3wldwfrxj5fm80000gn/T/ruby-build.20130501225910.3936.log
+</span><span class='line'>
+</span><span class='line'>Last 10 log lines:
+</span><span class='line'>checking for gawk... no
+</span><span class='line'>checking for mawk... no
+</span><span class='line'>checking for nawk... no
+</span><span class='line'>checking for awk... awk
+</span><span class='line'>checking whether make sets $(MAKE)... no
+</span><span class='line'>checking for gcc... /usr/local/bin/gcc-4.2
+</span><span class='line'>checking whether the C compiler works... no
+</span><span class='line'>configure: error: in `/var/folders/m4/xdbt7xw53pj3wldwfrxj5fm80000gn/T/ruby-build.20130501225910.3936/yaml-0.1.4':
+</span><span class='line'>configure: error: C compiler cannot create executables
+</span><span class='line'>See `config.log' for more details</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Cause: I didn&#8217;t have xcode installed on this machine. Duh!!</li>
+<li>Fix: Install xcode.</li>
+<li>Now what?: Run &#8220;rbenv install 1.9.3-p0&#8221; again, and make sure you get no errors. Then run</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rbenv rehash
+</span><span class='line'>ruby --version</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Issue: &#8220;ruby &#8211;version&#8221; still isn&#8217;t updated</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ ruby --version
+</span><span class='line'>ruby 1.8.7 (2012-02-08 patchlevel 358) [universal-darwin11.0]</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Cause: It&#8217;s using the system default version of ruby (which is 1.8.7).</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ rbenv global
+</span><span class='line'>system</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Fix: Set the system default as 1.9.3-p0. Now do &#8220;rbenv global&#8221; and see what it&#8217;s set to.</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ rbenv global 1.9.3-p0
+</span><span class='line'>$ rbenv global
+</span><span class='line'>1.9.3-p0</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Notes on installing ubuntu 12.04]]></title>
+    <link href="http://yukotakagi.github.io/blog/2013/05/04/installing-12-dot-04-on-super-old-laptop/"/>
+    <updated>2013-05-04T18:25:00-07:00</updated>
+    <id>http://yukotakagi.github.io/blog/2013/05/04/installing-12-dot-04-on-super-old-laptop</id>
+    <content type="html"><![CDATA[<p>On a crappy old laptop that I bought back in 2005 for $300-ish.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[So Octopress,]]></title>
     <link href="http://yukotakagi.github.io/blog/2013/05/02/test-test-test/"/>
     <updated>2013-05-02T21:47:00-07:00</updated>
     <id>http://yukotakagi.github.io/blog/2013/05/02/test-test-test</id>
-    <content type="html"><![CDATA[<p>I&#8217;ve decided to give it a try.</p>
+    <content type="html"><![CDATA[<p>I&#8217;ve decided to give it a try, as my github user page has been blank for a while and there&#8217;s no reason not to play around with it.</p>
 ]]></content>
   </entry>
   

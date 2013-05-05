@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Misc | Yuko Tåkagi]]></title>
+  <title><![CDATA[Category: Misc | Yuko Takagi]]></title>
   <link href="http://yukotakagi.github.io/blog/categories/misc/atom.xml" rel="self"/>
   <link href="http://yukotakagi.github.io/"/>
-  <updated>2013-05-04T17:28:08-07:00</updated>
+  <updated>2013-05-04T20:12:51-07:00</updated>
   <id>http://yukotakagi.github.io/</id>
   <author>
     <name><![CDATA[Yuko Takagi]]></name>
@@ -18,7 +18,7 @@
     <link href="http://yukotakagi.github.io/blog/2013/05/02/test-test-test/"/>
     <updated>2013-05-02T21:47:00-07:00</updated>
     <id>http://yukotakagi.github.io/blog/2013/05/02/test-test-test</id>
-    <content type="html"><![CDATA[<p>I've decided to give it a try.</p>
+    <content type="html"><![CDATA[<p>I've decided to give it a try, as my github user page has been blank for a while and there's no reason not to play around with it.</p>
 ]]></content>
   </entry>
   

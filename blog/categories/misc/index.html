@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: Misc - Yuko Tåkagi</title>
+  <title>Category: Misc - Yuko Takagi</title>
   <meta name="author" content="Yuko Takagi">
 
   
@@ -21,7 +21,7 @@
   <link rel="canonical" href="http://yukotakagi.github.ioblog/categories/misc">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="Yuko Tåkagi" type="application/atom+xml">
+  <link href="/atom.xml" rel="alternate" title="Yuko Takagi" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
@@ -36,7 +36,7 @@
 
 <body   >
   <header role="banner"><hgroup>
-  <h1><a href="/">Yuko Tåkagi</a></h1>
+  <h1><a href="/">Yuko Takagi</a></h1>
   
     <h2>ehhhh...</h2>
   
@@ -56,9 +56,9 @@
 </form>
   
 <ul class="main-navigation">
-  <li><a href="/">About</a></li>
   <li><a href="/">Blog</a></li>
   <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about/index.html">About</a></li>
 </ul>
 
 </nav>
@@ -85,7 +85,7 @@
 <time datetime="2013-05-02T21:47:00-07:00" pubdate><span class='month'>May</span> <span class='day'>02</span> <span class='year'>2013</span></time>
 
 <footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/misc/'>Misc</a></span>
+  <span class="categories">posted in <a class='category' href='/blog/categories/misc/'>Misc</a>, <a class='category' href='/blog/categories/octopress/'>octopress</a></span>
 </footer>
 
 
@@ -100,9 +100,44 @@
 
 <aside class="sidebar">
   
-    <section>
+    
+<section>
+  <h1>GitHub Repos</h1>
+  
+  <a href="https://github.com/yukotakagi">@yukotakagi</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'yukotakagi',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+<section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/05/04/installing-octopress-for-github-user-page/">installing octopress for github user page</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/05/04/installing-12-dot-04-on-super-old-laptop/">Notes on installing ubuntu 12.04</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/05/02/test-test-test/">So Octopress,</a>
@@ -110,10 +145,6 @@
     
   </ul>
 </section>
-
-
-
-
 
   
 </aside>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: ubuntu | Yuko Takagi]]></title>
+  <link href="http://yukotakagi.github.io/blog/categories/ubuntu/atom.xml" rel="self"/>
+  <link href="http://yukotakagi.github.io/"/>
+  <updated>2013-05-04T20:12:51-07:00</updated>
+  <id>http://yukotakagi.github.io/</id>
+  <author>
+    <name><![CDATA[Yuko Takagi]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Notes on installing ubuntu 12.04]]></title>
+    <link href="http://yukotakagi.github.io/blog/2013/05/04/installing-12-dot-04-on-super-old-laptop/"/>
+    <updated>2013-05-04T18:25:00-07:00</updated>
+    <id>http://yukotakagi.github.io/blog/2013/05/04/installing-12-dot-04-on-super-old-laptop</id>
+    <content type="html"><![CDATA[<p>On a crappy old laptop that I bought back in 2005 for $300-ish.</p>
+]]></content>
+  </entry>
+  
+</feed>
