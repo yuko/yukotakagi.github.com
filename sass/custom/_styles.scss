@@ -2,12 +2,12 @@
 // Add styles here to make changes without digging in too much
 
 html {
-    background: #fff;
+    background: #f8f8f8;
 }
 
 body {
     > header {
-        background: #fff;
+        background: #f8f8f8;
 
         h1 a, h1 a:visited {
             color: #222;
@@ -31,6 +31,49 @@ body {
 
 }
 
+a:hover {
+    color: #ff8738 !important;
+}
 
+a:visited {
+    color: #000;
+}
+
+article h1, article h2,
+aside.sidebar section h1 {
+    font-family: "minerva-modern","Helvetica",sans-serif;
+}
+
+/* article header */
+#content .blog-index article h1 {
+    font-size: 1.8em;
+}
+
+#content .blog-index article h1 a:hover {
+    color: #ff8738;
+}
+
+/* code */
+.pre-code, html .gist .gist-file .gist-syntax .highlight pre, .highlight code {
+    background: #424242 url('/images/noise.png?1367538016') top left !important;
+    color: #D8D8D8 !important;
+}
+
+.pre-code span, html .gist .gist-file .gist-syntax .highlight pre span, .highlight code span {
+    color: #D8D8D8 !important;
+}
+
+.highlight, .gist-highlight {
+    background: #424242;
+}
+
+/* code, line numbers */
+.highlight .line-numbers, html .gist .gist-file .gist-syntax .highlight .line_numbers {
+    background: #2E2E2E url('/images/noise.png?1367538016') top left !important;
+}
+
+.highlight .line-numbers span, html .gist .gist-file .gist-syntax .highlight .line_numbers span {
+    color: #DBDBDB !important;
+}
 
 
