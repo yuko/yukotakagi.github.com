@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: ubuntu | Yuko Takagi]]></title>
+  <title><![CDATA[Category: ubuntu | o_0]]></title>
   <link href="http://yukotakagi.github.io/blog/categories/ubuntu/atom.xml" rel="self"/>
   <link href="http://yukotakagi.github.io/"/>
-  <updated>2013-05-04T20:12:51-07:00</updated>
+  <updated>2013-08-27T21:35:13-07:00</updated>
   <id>http://yukotakagi.github.io/</id>
   <author>
     <name><![CDATA[Yuko Takagi]]></name>
@@ -19,6 +19,16 @@
     <updated>2013-05-04T18:25:00-07:00</updated>
     <id>http://yukotakagi.github.io/blog/2013/05/04/installing-12-dot-04-on-super-old-laptop</id>
     <content type="html"><![CDATA[<p>On a crappy old laptop that I bought back in 2005 for $300-ish.</p>
+
+<p>Installing 12.04 LTS went smoothly until when I rebooted the machine as the last step of installation. Then it hung, and stopped responding after spittinh this error.
+<code>
+[ 48.753669] b43-phy0 ERROR: Firmware file "b43/ucode5.fw" not found
+[ 48.753687] b43-phy0 ERROR: Firmware file "b43/ucode5.fw" not found
+[ 48.753698] b43-phy0 ERROR:
+You must go to http://wireless.kernel.org/en/users/...devicefirmware
+and download the correct firmware for this driver version. Please
+carefully read all instructions on this site.
+</code></p>
 ]]></content>
   </entry>
   
