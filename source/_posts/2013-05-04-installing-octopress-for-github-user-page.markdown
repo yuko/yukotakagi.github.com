@@ -8,7 +8,7 @@ categories: [octopress, rbenv]
 
 Here's the list of problems I ran into while setting up octopress on my github user page, and how I fixed them. Silly, but hey! Someone else might have encountered the same issues, so why not share them?
 
-##Issue: ruby is not up-to-date.
+##Issue #1 ruby is not up-to-date.
 - Fix: Get the latest that's compatible with octopress via rbenv. Install rbenv via Homebrew.
 ```
 brew update
@@ -16,7 +16,7 @@ brew install rbenv
 rbenv install 1.9.3-p0 
 ```
 
-##Issue: rbenv says there's no such command 'install'
+##Issue #2 rbenv says there's no such command 'install'
 ```
 rbenv install 1.9.3-p0
 rbenv: no such command `install'
@@ -28,7 +28,7 @@ git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-bu
 ```
 - Now what?: Now that ruby-build is installed, back to setting ruby version.
 
-##Issue: "rbenv install 1.9.3-p0" spits error "configure: error: C compiler cannot create executables"
+##Issue #3 "rbenv install 1.9.3-p0" spits error "configure: error: C compiler cannot create executables"
 ```
 $ rbenv install 1.9.3-p0
 Downloading yaml-0.1.4.tar.gz...
@@ -54,13 +54,13 @@ See `config.log' for more details
 ```
 - Cause: I didn't have xcode installed on this machine. Duh!!
 - Fix: Install xcode.
-- Now what?: Run "rbenv install 1.9.3-p0" again, and make sure you get no errors. Then run
+Now that c complier is installed, run "rbenv install 1.9.3-p0" again, and make sure you get no errors. Then run
 ```
 rbenv rehash
 ruby --version
 ```
 
-##Issue: "ruby --version" still isn't updated
+##Issue #4 "ruby --version" still isn't updated
 ```
 $ ruby --version
 ruby 1.8.7 (2012-02-08 patchlevel 358) [universal-darwin11.0]

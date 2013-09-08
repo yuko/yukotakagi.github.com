@@ -6,5 +6,4 @@ comments: true
 categories: [Misc, octopress]
 ---
 
-I've decided to give it a try, as my github user page has been blank for a while and there's no reason not to play around with it.
-
+I've decided to give it a try, as my github user page has been blank for a while and there's no reason not to play around with it. 
