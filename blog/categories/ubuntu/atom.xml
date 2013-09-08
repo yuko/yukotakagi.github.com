@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: ubuntu | o_0]]></title>
+  <title><![CDATA[Category: ubuntu | !#]]></title>
   <link href="http://yukotakagi.github.io/blog/categories/ubuntu/atom.xml" rel="self"/>
   <link href="http://yukotakagi.github.io/"/>
-  <updated>2013-08-27T21:35:13-07:00</updated>
+  <updated>2013-09-08T00:24:15-07:00</updated>
   <id>http://yukotakagi.github.io/</id>
   <author>
     <name><![CDATA[Yuko Takagi]]></name>
@@ -20,15 +20,38 @@
     <id>http://yukotakagi.github.io/blog/2013/05/04/installing-12-dot-04-on-super-old-laptop</id>
     <content type="html"><![CDATA[<p>On a crappy old laptop that I bought back in 2005 for $300-ish.</p>
 
-<p>Installing 12.04 LTS went smoothly until when I rebooted the machine as the last step of installation. Then it hung, and stopped responding after spittinh this error.
+<p>Installing 12.04 LTS went smoothly until when I rebooted the machine as the last step of installation. Then it hung, and stopped responding after spitting this error.
 <code>
 [ 48.753669] b43-phy0 ERROR: Firmware file "b43/ucode5.fw" not found
 [ 48.753687] b43-phy0 ERROR: Firmware file "b43/ucode5.fw" not found
-[ 48.753698] b43-phy0 ERROR:
-You must go to http://wireless.kernel.org/en/users/...devicefirmware
-and download the correct firmware for this driver version. Please
-carefully read all instructions on this site.
+[ 48.753698] b43-phy0 ERROR: You must go to http://wireless.kernel.org/en/users/...devicefirmware and download the correct firmware for this driver version. Please carefully read all instructions on this site.
+</code>
+According to <a href="http://wireless.kernel.org/en/users/Drivers/b43#Devicefirmware">this</a>, apparently I'm missing the driver for the specific Broadcom wireless chip.
+<a href="https://answers.launchpad.net/ubuntu/+source/gnome-nettool/+question/198083">Other people who have encountered the same issue</a> solved it by running
+<code>
+sudo apt-get install
+firmware-b43-installer
+</code>
+in Terminal, however, my laptop hung even before booting up. So I don't have an access to Terminal.</p>
+
+<p>First, to solve the hanging issue this, I did the following.</p>
+
+<ol>
+<li>When it hung, force reboot</li>
+<li>grub screen shows up. Press 'e' so it enters edit mode.</li>
+<li>Move cursor to the line that reads "vt.handoff=..."</li>
+<li>Add "b43.blacklist=yes" to that line. Press F10 to save.</li>
+</ol>
+
+
+<p>Referenced <a href="http://ubuntuforums.org/showthread.php?t=1966655">here</a>.
+This way the machine at least boots up. Note that the wireless doesn't work because of the missing driver, so plug in LAN cable. Then run
+<code>
+sudo apt-get
+install firmware-b43-installer
 </code></p>
+
+<p>Problem solved. Woot!</p>
 ]]></content>
   </entry>
   

@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Notes on installing ubuntu 12.04 - o_0</title>
+  <title>Notes on installing ubuntu 12.04 - !#</title>
   <meta name="author" content="Yuko Takagi">
 
   
@@ -21,7 +21,7 @@
   <link rel="canonical" href="http://yukotakagi.github.io/blog/2013/05/04/installing-12-dot-04-on-super-old-laptop">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="o_0" type="application/atom+xml">
+  <link href="/atom.xml" rel="alternate" title="!#" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
@@ -36,7 +36,7 @@
 
 <body   >
   <header role="banner"><hgroup>
-  <h1><a href="/">o_0</a></h1>
+  <h1><a href="/">!#</a></h1>
   
     <h2>ehhhh...</h2>
   
@@ -94,23 +94,50 @@
 
 <div class="entry-content"><p>On a crappy old laptop that I bought back in 2005 for $300-ish.</p>
 
-<p>Installing 12.04 LTS went smoothly until when I rebooted the machine as the last step of installation. Then it hung, and stopped responding after spittinh this error.</p>
+<p>Installing 12.04 LTS went smoothly until when I rebooted the machine as the last step of installation. Then it hung, and stopped responding after spitting this error.</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>[ 48.753669] b43-phy0 ERROR: Firmware file "b43/ucode5.fw" not found
 </span><span class='line'>[ 48.753687] b43-phy0 ERROR: Firmware file "b43/ucode5.fw" not found
-</span><span class='line'>[ 48.753698] b43-phy0 ERROR:
-</span><span class='line'>You must go to http://wireless.kernel.org/en/users/...devicefirmware
-</span><span class='line'>and download the correct firmware for this driver version. Please
-</span><span class='line'>carefully read all instructions on this site.</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'>[ 48.753698] b43-phy0 ERROR: You must go to http://wireless.kernel.org/en/users/...devicefirmware and download the correct firmware for this driver version. Please carefully read all instructions on this site.</span></code></pre></td></tr></table></div></figure>
+
+
+<p>
+According to <a href="http://wireless.kernel.org/en/users/Drivers/b43#Devicefirmware">this</a>, apparently I&#8217;m missing the driver for the specific Broadcom wireless chip.
+<a href="https://answers.launchpad.net/ubuntu/+source/gnome-nettool/+question/198083">Other people who have encountered the same issue</a> solved it by running</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install
+</span><span class='line'>firmware-b43-installer</span></code></pre></td></tr></table></div></figure>
+
+
+<p>in Terminal, however, my laptop hung even before booting up. So I don&#8217;t have an access to Terminal.</p>
+
+<p>First, to solve the hanging issue this, I did the following.</p>
+
+<ol>
+<li>When it hung, force reboot</li>
+<li>grub screen shows up. Press &#8216;e&#8217; so it enters edit mode.</li>
+<li>Move cursor to the line that reads &#8220;vt.handoff=&#8230;&#8221;</li>
+<li>Add &#8220;b43.blacklist=yes&#8221; to that line. Press F10 to save.</li>
+</ol>
+
+
+<p>Referenced <a href="http://ubuntuforums.org/showthread.php?t=1966655">here</a>.
+This way the machine at least boots up. Note that the wireless doesn&#8217;t work because of the missing driver, so plug in LAN cable. Then run</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get
+</span><span class='line'>install firmware-b43-installer</span></code></pre></td></tr></table></div></figure>
 
 
 <p></p>
+
+<p>Problem solved. Woot!</p>
 </div>
 
 

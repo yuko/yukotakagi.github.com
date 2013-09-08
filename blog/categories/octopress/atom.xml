@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: octopress | o_0]]></title>
+  <title><![CDATA[Category: octopress | !#]]></title>
   <link href="http://yukotakagi.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://yukotakagi.github.io/"/>
-  <updated>2013-08-27T21:35:13-07:00</updated>
+  <updated>2013-09-08T00:24:15-07:00</updated>
   <id>http://yukotakagi.github.io/</id>
   <author>
     <name><![CDATA[Yuko Takagi]]></name>
@@ -20,7 +20,7 @@
     <id>http://yukotakagi.github.io/blog/2013/05/04/installing-octopress-for-github-user-page</id>
     <content type="html"><![CDATA[<p>Here's the list of problems I ran into while setting up octopress on my github user page, and how I fixed them. Silly, but hey! Someone else might have encountered the same issues, so why not share them?</p>
 
-<h2>Issue: ruby is not up-to-date.</h2>
+<h2>Issue #1 ruby is not up-to-date.</h2>
 
 <ul>
 <li>Fix: Get the latest that's compatible with octopress via rbenv. Install rbenv via Homebrew.
@@ -32,7 +32,7 @@ rbenv install 1.9.3-p0
 </ul>
 
 
-<h2>Issue: rbenv says there's no such command 'install'</h2>
+<h2>Issue #2 rbenv says there's no such command 'install'</h2>
 
 <p><code>
 rbenv install 1.9.3-p0
@@ -45,7 +45,7 @@ git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-bu
 </code>
 - Now what?: Now that ruby-build is installed, back to setting ruby version.</p>
 
-<h2>Issue: "rbenv install 1.9.3-p0" spits error "configure: error: C compiler cannot create executables"</h2>
+<h2>Issue #3 "rbenv install 1.9.3-p0" spits error "configure: error: C compiler cannot create executables"</h2>
 
 <p>```
 $ rbenv install 1.9.3-p0
@@ -72,13 +72,13 @@ See</code>config.log' for more details
 <code>
 - Cause: I didn't have xcode installed on this machine. Duh!!
 - Fix: Install xcode.
-- Now what?: Run "rbenv install 1.9.3-p0" again, and make sure you get no errors. Then run
+Now that c complier is installed, run "rbenv install 1.9.3-p0" again, and make sure you get no errors. Then run
 </code>
 rbenv rehash
 ruby --version
 ```</p>
 
-<h2>Issue: "ruby --version" still isn't updated</h2>
+<h2>Issue #4 "ruby --version" still isn't updated</h2>
 
 <p><code>
 $ ruby --version
