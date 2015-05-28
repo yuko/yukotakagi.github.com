@@ -8,11 +8,11 @@ html {
 
 body {
     color: #fff;
-    background-color: #000;
+    text-align: center;
 }
 
 .container {
-    width: 45%;
+    display: inline-block;
     margin: 0 auto;
     padding-top: 20%;
 }
@@ -20,5 +20,6 @@ body {
 p {
     font-family: 'VT323';
     font-size: 36px;
+    text-transform: uppercase;
 }
 
